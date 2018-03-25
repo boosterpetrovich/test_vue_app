@@ -1,0 +1,8 @@
+{
+    "pageTitle": "Cashier settings",
+    "apiDev": "http://api.cashier.ru.dev/v1/",
+    "apiProd": "http://api.cashier.ru/v1/",
+    "authorName": "Alexey Kosenko",
+    "authorEmail": "misterlexa123@gmail.com",
+    "appName": "Cashier settings"
+}
