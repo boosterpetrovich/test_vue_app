@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackOnBuildPlugin = require('on-build-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const path = require('path');
@@ -46,26 +45,24 @@ const config = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
                 }
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue'
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('css-loader', 'style-loader')
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,
                 loaders: [
-                    'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-                    'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             },
             {
@@ -81,9 +78,6 @@ const config = {
                 API_URL: prod ? apiUrlProd : apiUrlDev,
                 ROUTER_MODE: prod ? routerModeProd : routerModeDev,
             }
-        }),
-        new UglifyJsPlugin({
-            test: /\.js($|\?)/i
         }),
         new CleanWebpackPlugin(['build']),
         new ExtractTextPlugin('styles.css'),
@@ -105,6 +99,11 @@ const config = {
         new WebpackShellPlugin({
             onBuildStart:['echo "Webpack Start"'],
             onBuildEnd:['echo "Webpack End"']
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
         })
     ]
 }
