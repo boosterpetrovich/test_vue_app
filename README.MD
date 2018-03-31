@@ -16,10 +16,9 @@ npm run deploy
 
 # Quick dev start
 
-webpack -w
+npm run dev
 
-Start of dev server
-./node_modules/.bin/live-server --port=3005 --open=build --watch=build
+The website is served http://localhost:8080
 
 # Apache config example
 RewriteEngine On
