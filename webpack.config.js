@@ -20,11 +20,14 @@ if (process.env.NODE_ENV === 'production') {
     var aliases = {
         vue: 'vue/dist/vue.min.js'
     }
+
+    var onBuildReady = ['./sh_scripts/deploy.sh'];
     console.log('production')
 } else {
     var aliases = {
         vue: 'vue/dist/vue.js'
     }
+    var onBuildReady = ['echo "dev build is ready"'];
     console.log('dev')
 }
 
@@ -98,7 +101,7 @@ const config = {
         }),
         new WebpackShellPlugin({
             onBuildStart:['echo "Webpack Start"'],
-            onBuildEnd:['echo "Webpack End"']
+            onBuildEnd: onBuildReady
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
