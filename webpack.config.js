@@ -4,6 +4,7 @@ const WebpackOnBuildPlugin = require('on-build-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const WebpackShellPlugin = require('webpack-shell-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const websiteConfig = require('./config.json')
@@ -64,7 +65,7 @@ const config = {
             {
                 test: /\.(jpe?g|png|gif)$/i,
                 loaders: [
-                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'file?hash=sha512&digest=hex&name=[name].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             },
@@ -107,7 +108,10 @@ const config = {
             compress: {
                 warnings: false
             }
-        })
+        }),
+        new CopyWebpackPlugin([
+            {from:'static',to:'static'} 
+        ]),
     ]
 }
 

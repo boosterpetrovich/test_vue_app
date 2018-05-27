@@ -10,6 +10,7 @@ import 'expose-loader?$!expose-loader?jQuery!jquery'
 // adding sematin
 import './vendors/semantic/dist/semantic.min.js'
 import './vendors/semantic/dist/semantic.min.css'
+import './vendors/boosterStyles/custom.css'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -17,6 +18,7 @@ Vue.use(VueResource)
 import App from './components/App.vue'
 // Components
 import Home from './components/home/index.vue';
+import Greeting from './components/booster/greeting.vue';
 // Printer
 import PrinterList from './components/printer/list.vue';
 import PrinterEdit from './components/printer/edit.vue';
@@ -33,7 +35,7 @@ import Settings from './components/settings/list.vue';
 import Error from './components/error/error.vue';
 //router
 const routes = [
-    { path: '/', redirect: { name: 'printer-list' }},
+    { path: '/', redirect: { name: 'home' }},
     {
         path: '/home',
         name: 'home',

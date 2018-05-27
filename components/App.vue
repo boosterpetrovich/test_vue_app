@@ -1,6 +1,5 @@
 <template>
-    <div class="ui container">
-        <main-menu></main-menu>
+    <div class="full-screen">
         <router-view></router-view>
     </div>
 </template>
