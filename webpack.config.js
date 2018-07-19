@@ -13,7 +13,11 @@ const prod = process.argv.indexOf('-p') !== -1;
 
 const apiUrlDev = JSON.stringify(websiteConfig.apiDev);
 const apiUrlProd = JSON.stringify(websiteConfig.apiProd);
-
+const redirectUrlDev = JSON.stringify(websiteConfig.redirectDev);
+const redirectUrlProd = JSON.stringify(websiteConfig.redirectProd);
+const client = JSON.stringify(websiteConfig.client);
+const clientId = JSON.stringify(websiteConfig.clientId);
+const clientSecret = JSON.stringify(websiteConfig.clientSecret);
 const routerModeDev = JSON.stringify('hash');
 const routerModeProd = JSON.stringify('history');
 
@@ -81,6 +85,10 @@ const config = {
                 NODE_ENV: '"production"',
                 API_URL: prod ? apiUrlProd : apiUrlDev,
                 ROUTER_MODE: prod ? routerModeProd : routerModeDev,
+                REDIRECT_URL: prod ? redirectUrlProd : redirectUrlDev,
+                CLIENT: client,
+                CLIENT_ID: clientId,
+                CLIENT_SECRET: clientSecret
             }
         }),
         new CleanWebpackPlugin(['build']),
@@ -110,7 +118,7 @@ const config = {
             }
         }),
         new CopyWebpackPlugin([
-            {from:'static',to:'static'} 
+            {from:'static',to:'static'}
         ]),
     ]
 }

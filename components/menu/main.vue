@@ -1,7 +1,14 @@
 <template>
-  <div class="ui basic two item massive menu">
-    <router-link class="item" :to="{ name: 'printer-list', params: {} }">Принтеры</router-link>
-    <router-link class="item" :to="{ name: 'scanner-list', params: {} }">Сканеры</router-link>
+  <div class="ui three item text menu">
+     <div class="item">
+
+     </div>
+     <div class="item">
+          Main menu and logo
+      </div>
+    <div class="item">
+
+    </div>
   </div>
 </template>
 <script>

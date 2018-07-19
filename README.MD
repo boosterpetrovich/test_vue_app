@@ -4,7 +4,7 @@ npm install
 
 # STAGE
 
-http://boosterpetrovich.com/cashier-settings/
+http://209.97.132.2/
 
 # Get production build
 

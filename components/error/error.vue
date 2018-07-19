@@ -3,14 +3,14 @@
         <h1 class="ui center aligned icon huge header">
             <i class="frown outline icon"></i>
             <div class="content">
-                Что-то пошло не так...
+                Error occured
             </div>
             <div class="sub header">
-                Наши лучшие специалисты уже работают над проблемой!
+                {{error.message}}
             </div>
             <div class="ui hidden divider"></div>
             <button class="ui large basic button" @click="clearError">
-                Вернуться на главную
+                Go home
             </button>
         </h1>
     </div>
@@ -22,7 +22,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
     name: 'error',
     computed: mapGetters({
-        printer: 'printer'
+        error: 'error'
     }),
     components: {
 

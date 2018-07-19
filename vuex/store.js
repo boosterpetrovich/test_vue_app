@@ -3,8 +3,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import app from './modules/app'
 import home from './modules/home'
-import printer from './modules/printer'
-import scanner from './modules/scanner'
+import property from './modules/property'
 
 Vue.use(Vuex)
 
@@ -17,7 +16,6 @@ export default new Vuex.Store({
     modules: {
         app,
         home,
-        printer,
-        scanner,
+        property,
     },
 })

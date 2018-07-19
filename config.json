@@ -1,8 +1,13 @@
 {
-    "pageTitle": "boosterpetrovich.com",
-    "apiDev": "http://api.boosterpetrovich.com/v1/",
-    "apiProd": "http://api.boosterpetrovich.com/v1/",
+    "pageTitle": "Test task",
+    "apiDev": "http://demo.seekom.com/",
+    "apiProd": "http://demo.seekom.com/",
+    "redirectDev": "http://209.97.132.2/auth_success",
+    "redirectProd": "http://209.97.132.2/auth_success",
     "authorName": "Alexey Kosenko",
     "authorEmail": "misterlexa123@gmail.com",
-    "appName": "boosterpetrovich.com"
+    "appName": "Test task",
+    "client": "Alexey Kosenko",
+    "clientId": "3f2c6ce599a7b5e4",
+    "clientSecret": "V3UQ1NPKkKGcxkWGQxzbNjzCWskYvgLyNy6SwVTXXhoNxnJN4nqK4tAYUXl5e4QF"
 }

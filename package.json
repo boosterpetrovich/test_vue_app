@@ -1,7 +1,7 @@
 {
-  "name": "cashier_settings",
+  "name": "test_task",
   "version": "0.0.1",
-  "description": "cashier_settings",
+  "description": "test_task",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://misterlexa123@bitbucket.org/cashierapp/cashier_settings_webpanel_front.git"
+    "url": "https://github.com/misterlexa/test_vue_app.git"
   },
   "keywords": [],
   "author": "Alexey Kosenko",

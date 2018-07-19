@@ -1,1 +1,1 @@
-scp -i ~/.ssh/booster -rp ./build root@188.166.33.74:/var/www/html/cashier-settings
+scp -i ~/.ssh/id_rsa -rp ./build root@209.97.132.2:/var/www/web_booking_engine

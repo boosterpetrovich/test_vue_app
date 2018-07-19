@@ -1,9 +1,11 @@
 import Facebook from './facebook'
 import Custom from './custom'
+import iBex from './ibex'
 
 var api = {
     facebook: Facebook,
-    custom: Custom
+    custom: Custom,
+    ibex: iBex,
 }
 
 export default class Auth {
@@ -18,7 +20,7 @@ export default class Auth {
 
         if (!api[type]) {
             throw new Error(
-                'Tratatata' + type
+                'There is no api' + type
             )
         }
 
@@ -27,29 +29,29 @@ export default class Auth {
         return this._api[type];
     }
 
-    login(type, creds = null) {
-        return this._getApi(type).login(creds)
+    login(response) {
+        return this._getApi(response.type).login(response.data)
     }
 
     checkAuth() {
-        // var user = localStorage.getItem('user')
-        // user = JSON.parse(user)
-        // if (!user) {
-        //     return false
-        // }
+        var auth = localStorage.getItem('token')
+        auth = JSON.parse(auth)
+        if (!auth.access_token || !auth.refresh_token || !auth) {
+            return false
+        }
         return true
     }
 
     getToken() {
-        var user = localStorage.getItem('user')
-        user = JSON.parse(user)
-        if (!user.apiToken) {
+        var auth = localStorage.getItem('token')
+        auth = JSON.parse(auth)
+        if (!auth.access_token || !auth.refresh_token || !auth) {
             return false
         }
-        return user.apiToken
+        return auth
     }
 
     removeAuth() {
-        localStorage.removeItem('user')
+        localStorage.removeItem('token')
     }
 }

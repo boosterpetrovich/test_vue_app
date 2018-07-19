@@ -1,18 +1,19 @@
 <template>
-    <div class="segment">
-        <div class="grid">
-            settings here
-        </div>
+    <div class="ui basic center aligned segment">
+        <a class="ui huge blue button" @click="login({type: 'ibex', data: auth})">
+            Login
+        </a>
     </div>
 </template>
 <script>
 
 import { mapGetters, mapActions } from 'vuex'
 
-export default {
-    name: 'settings',
-    computed: mapGetters({
 
+export default {
+    name: 'login',
+    computed: mapGetters({
+        auth: 'auth'
     }),
     components: {
 
@@ -29,7 +30,7 @@ export default {
 
     },
     methods: mapActions([
-
+        'login'
     ]),
 }
 </script>
